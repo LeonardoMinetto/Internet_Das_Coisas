@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Telemetria básica da tag de monitoramento de cargas." />
+    <meta name="theme-color" content="#07111f" />
+    <title>SmartTag | Telemetria</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2307111f'/%3E%3Cpath d='M19 16h20l8 8v24H19z' fill='none' stroke='%232ed3c6' stroke-width='5' stroke-linejoin='round'/%3E%3Ccircle cx='38' cy='26' r='4' fill='%23c8f169'/%3E%3Cpath d='M26 38h14' stroke='%23f7fafc' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./smartTag.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36">
+              <path d="M10 7h12l7 7v15H10z" />
+              <circle cx="22" cy="14" r="2.6" />
+              <path d="M15 22h9" />
+            </svg>
+          </span>
+          <strong>SmartTag</strong>
+        </div>
+
+        <div class="connection" role="status">
+          <span aria-hidden="true"></span>
+          Tag online
+        </div>
+      </header>
+
+      <section class="telemetry" aria-labelledby="telemetryTitle">
+        <div class="section-heading">
+          <div>
+            <p>Tag ST-042</p>
+            <h1 id="telemetryTitle">Telemetria da tag</h1>
+            <span>Última atualização: <time id="lastUpdate">agora</time></span>
+          </div>
+
+          <button id="refreshButton" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 11a8 8 0 1 0-2.3 5.7" />
+              <path d="M20 4v7h-7" />
+            </svg>
+            Atualizar leitura
+          </button>
+        </div>
+
+        <div class="telemetry-grid">
+          <article class="metric-card">
+            <div class="metric-icon battery-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="7" width="16" height="10" rx="2" />
+                <path d="M21 10v4M6 10h8" />
+              </svg>
+            </div>
+            <div>
+              <span class="metric-label">Bateria</span>
+              <strong><span id="batteryValue">87</span><small>%</small></strong>
+            </div>
+            <div class="progress" aria-label="Nível da bateria">
+              <span id="batteryBar" style="width: 87%"></span>
+            </div>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-icon signal-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12.5a10 10 0 0 1 14 0M8 16a6 6 0 0 1 8 0M11 19.5a2 2 0 0 1 2 0" />
+              </svg>
+            </div>
+            <div>
+              <span class="metric-label">Sinal</span>
+              <strong><span id="signalValue">−62</span><small> dBm</small></strong>
+            </div>
+            <span class="quality" id="signalQuality">Bom</span>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-icon temperature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0Z" />
+                <path d="M12 11v6" />
+              </svg>
+            </div>
+            <div>
+              <span class="metric-label">Temperatura interna</span>
+              <strong><span id="temperatureValue">22,6</span><small> °C</small></strong>
+            </div>
+            <span class="quality">Normal</span>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-icon message-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 5h16v12H8l-4 3z" />
+                <path d="M8 9h8M8 13h5" />
+              </svg>
+            </div>
+            <div>
+              <span class="metric-label">Mensagens recebidas</span>
+              <strong id="messageValue">124</strong>
+            </div>
+            <span class="quality">Nesta sessão</span>
+          </article>
+        </div>
+
+        <p class="simulation-note">Dados simulados localmente para a primeira versão.</p>
+      </section>
+    </main>
+  </body>
+</html>
