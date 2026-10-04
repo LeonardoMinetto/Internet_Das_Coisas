@@ -13,4 +13,6 @@ Esta é a primeira versão e contém somente uma seção de telemetria da tag co
 Os valores são simulados localmente no arquivo `Internet_Das_Coisas/smartTag.js`. A cada cinco segundos são aplicadas pequenas variações no sinal e na temperatura, a bateria diminui lentamente e o contador de mensagens aumenta.
 
 ## Executar localmente
+execute o comando `python3 -m http.server 8000` 
+
 acesse `http://localhost:4173`.
