@@ -42,12 +42,12 @@
             <span>Última atualização: <time id="lastUpdate">agora</time></span>
           </div>
 
-          <button id="refreshButton" type="button">
+          <button id="refreshButton" type="button" aria-label="Atualizar leitura da tag">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M20 11a8 8 0 1 0-2.3 5.7" />
               <path d="M20 4v7h-7" />
             </svg>
-            Atualizar leitura
+            <span id="refreshLabel">Atualizar leitura</span>
           </button>
         </div>
 
@@ -63,7 +63,7 @@
               <span class="metric-label">Bateria</span>
               <strong><span id="batteryValue">87</span><small>%</small></strong>
             </div>
-            <div class="progress" aria-label="Nível da bateria">
+            <div class="progress" role="progressbar" aria-label="Nível da bateria" aria-valuemin="0" aria-valuemax="100" aria-valuenow="87">
               <span id="batteryBar" style="width: 87%"></span>
             </div>
           </article>

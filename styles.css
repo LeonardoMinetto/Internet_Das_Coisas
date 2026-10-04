@@ -144,6 +144,12 @@ svg {
 
 .section-heading button:hover { background: #68f0e3; border-color: #68f0e3; }
 .section-heading button svg { width: 18px; height: 18px; }
+.section-heading button:disabled { cursor: wait; opacity: 0.82; }
+.section-heading button.is-updating svg { animation: refresh-turn 0.65s ease; }
+
+@keyframes refresh-turn {
+  to { transform: rotate(360deg); }
+}
 
 .telemetry-grid {
   display: grid;
@@ -227,4 +233,5 @@ svg {
 
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+  .section-heading button.is-updating svg { animation: none; }
 }
