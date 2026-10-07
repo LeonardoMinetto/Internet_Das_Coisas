@@ -63,7 +63,7 @@
               <span class="metric-label">Bateria</span>
               <strong><span id="batteryValue">87</span><small>%</small></strong>
             </div>
-            <div class="progress" role="progressbar" aria-label="Nível da bateria" aria-valuemin="0" aria-valuemax="100" aria-valuenow="87">
+            <div id="batteryProgress" class="progress" role="progressbar" aria-label="Nível da bateria" aria-valuemin="0" aria-valuemax="100" aria-valuenow="87">
               <span id="batteryBar" style="width: 87%"></span>
             </div>
           </article>
@@ -92,7 +92,7 @@
               <span class="metric-label">Temperatura interna</span>
               <strong><span id="temperatureValue">22,6</span><small> °C</small></strong>
             </div>
-            <span class="quality">Normal</span>
+            <span class="quality" id="temperatureQuality">Normal</span>
           </article>
 
           <article class="metric-card">
@@ -111,6 +111,104 @@
         </div>
 
         <p class="simulation-note">Dados simulados localmente para a primeira versão.</p>
+      </section>
+
+      <section class="occurrences" aria-labelledby="occurrencesTitle">
+        <div class="occurrences-heading">
+          <div>
+            <p>Monitoramento</p>
+            <h2 id="occurrencesTitle">Ocorrências fora dos parâmetros</h2>
+            <span>Histórico de leituras que exigem atenção.</span>
+          </div>
+
+          <span class="occurrence-count" id="occurrenceCount">0 ocorrências</span>
+        </div>
+
+        <div class="instrument-grid" aria-label="Leituras dos instrumentos">
+          <article class="instrument-card">
+            <div class="instrument-card-heading">
+              <div class="metric-icon accelerometer-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="7" y="7" width="10" height="10" rx="2" />
+                  <path d="M12 3v4M12 17v4M3 12h4M17 12h4M12 9v6M9 12h6" />
+                </svg>
+              </div>
+              <div>
+                <span>Acelerômetro</span>
+                <h3>Impactos do produto</h3>
+              </div>
+              <span class="instrument-status">Coletando</span>
+            </div>
+
+            <div class="instrument-values">
+              <div>
+                <span>Pico de impacto</span>
+                <strong><span id="impactValue">0,4</span><small> g</small></strong>
+                <span class="quality" id="impactQuality">Normal</span>
+              </div>
+              <div>
+                <span>Aceleração resultante</span>
+                <strong><span id="accelerationValue">1,0</span><small> g</small></strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="instrument-card">
+            <div class="instrument-card-heading">
+              <div class="metric-icon gyroscope-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M4 12c0-3 3.6-5.5 8-5.5s8 2.5 8 5.5-3.6 5.5-8 5.5S4 15 4 12Z" />
+                  <path d="M12 4c3 0 5.5 3.6 5.5 8S15 20 12 20s-5.5-3.6-5.5-8S9 4 12 4Z" />
+                </svg>
+              </div>
+              <div>
+                <span>Giroscópio</span>
+                <h3>Orientação do produto</h3>
+              </div>
+              <span class="instrument-status">Coletando</span>
+            </div>
+
+            <div class="instrument-values">
+              <div>
+                <span>Inclinação</span>
+                <strong><span id="orientationValue">4,2</span><small>°</small></strong>
+                <span class="quality" id="orientationQuality">Correta</span>
+              </div>
+              <div>
+                <span>Velocidade angular</span>
+                <strong><span id="angularVelocityValue">1,8</span><small> °/s</small></strong>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="parameter-summary" aria-label="Parâmetros de referência">
+          <div>
+            <span>Bateria</span>
+            <strong>mín. 20%</strong>
+          </div>
+          <div>
+            <span>Sinal</span>
+            <strong>mín. −80 dBm</strong>
+          </div>
+          <div>
+            <span>Temperatura</span>
+            <strong>18 a 28 °C</strong>
+          </div>
+          <div>
+            <span>Impacto</span>
+            <strong>máx. 3 g</strong>
+          </div>
+          <div>
+            <span>Inclinação</span>
+            <strong>máx. 30°</strong>
+          </div>
+        </div>
+
+        <ol class="occurrence-list" id="occurrenceList" aria-live="polite">
+          <li class="occurrence-empty">Nenhuma ocorrência registrada nesta sessão.</li>
+        </ol>
       </section>
     </main>
   </body>
